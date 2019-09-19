@@ -1,0 +1,30 @@
+/* 2. Use Report Builder or Visual Studio (SSRS) to develop the following report: */
+
+select property.name,
+property.bedroom,
+property.bathroom,
+person.firstname,
+person.lastname,
+address.number,
+address.street,
+tenantproperty.paymentamount,
+tenantpaymentfrequencies.code,
+ownerproperty.ownerid,
+propertyexpense.description,
+propertyexpense.Date,
+propertyexpense.amount
+from property
+left outer join propertyExpense
+on property.id=propertyexpense.propertyid
+left outer join address
+on property.addressid=address.addressid
+left outer join tenantproperty
+on property.id=tenantproperty.propertyid
+left outer join ownerproperty
+on property.id=ownerproperty.propertyid
+left outer join person
+on ownerproperty.ownerid=person.id
+inner join tenantpaymentfrequencies
+on tenantproperty.paymentfrequencyid=tenantpaymentfrequencies.id
+where
+property.id='5643'
