@@ -1,4 +1,4 @@
-/* 1. Display a list of all property names and their property id’s for Owner Id: 1426. */-----------------------------------------------------------------------
+/* 1. Display a list of all property names and their property idâ€™s for Owner Id: 1426. */-----------------------------------------------------------------------
 SELECT [dbo].[Property].Id PropertID,
 [dbo].[Property].Name AS property ,
 [dbo].[OwnerProperty].OwnerId 
